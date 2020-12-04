@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lab4 module &#8212; Документация String Deleter </title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-lab4">
+<span id="lab4-module"></span><h1>lab4 module<a class="headerlink" href="#module-lab4" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Данная программа выполняет поиск и удаление повторяющихся строк в текстовом файле.</p>
+<p>Алгоритм работы с программой:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>проверить путь к файлу, указанный в программе;</li>
+</ol>
+<p>0.5 Указать свой путь к тестовым примерам и сохраняемым копиям;</p>
+<ol class="arabic">
+<li><p class="first">Указать название файла;</p>
+<blockquote>
+<div><p>(Например : Test_10M_not_similar.txt)</p>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Указать доп условие(если требуется);</dt>
+<dd><p class="first last">(Например : -all)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Дождаться выполнения;</p>
+</li>
+<li><dl class="first docutils">
+<dt>Указать путь для сохранения копии файла с удалёнными повторяющимися строками.</dt>
+<dd><p class="first last">(Например : redfile.txt)</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>Модификации:</p>
+<blockquote>
+<div><p>«-natural» – строки будут считаться одинаковыми, если они выглядят одинаково для человека;</p>
+<p>«-case» – приведение к одному регистру. Теперь большие и маленькие буквы будут считаться одинаковыми;</p>
+<p>«-all» - совмещение 2 предыдущих модификаций.</p>
+</div></blockquote>
+<dl class="data">
+<dt id="lab4.EQ">
+<code class="descclassname">lab4.</code><code class="descname">EQ</code><em class="property"> = {'a': 'а', 'b': 'в', 'c': 'с', 'e': 'е', 'h': 'н', 'k': 'к', 'm': 'м', 'o': 'о', 'p': 'р', 't': 'т', 'x': 'х'}</em><a class="headerlink" href="#lab4.EQ" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь замены для all</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lab4.EQreg">
+<code class="descclassname">lab4.</code><code class="descname">EQreg</code><em class="property"> = {'A': 'А', 'B': 'В', 'C': 'С', 'E': 'Е', 'H': 'Н', 'K': 'К', 'M': 'М', 'O': 'О', 'P': 'Р', 'T': 'Т', 'X': 'Х', 'a': 'а', 'c': 'с', 'e': 'е', 'o': 'о', 'p': 'р', 'x': 'х'}</em><a class="headerlink" href="#lab4.EQreg" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь замены для natural</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.all">
+<code class="descclassname">lab4.</code><code class="descname">all</code><span class="sig-paren">(</span><em>string: str</em><span class="sig-paren">)</span><a class="headerlink" href="#lab4.all" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Замена похожих символов без учета регистра</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.case">
+<code class="descclassname">lab4.</code><code class="descname">case</code><span class="sig-paren">(</span><em>string: str</em><span class="sig-paren">)</span><a class="headerlink" href="#lab4.case" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Привод текста к одному регистру</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.find_del">
+<code class="descclassname">lab4.</code><code class="descname">find_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lab4.find_del" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверка условий, модификация файла с учетом условий</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.helper">
+<code class="descclassname">lab4.</code><code class="descname">helper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lab4.helper" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Справка</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.natural">
+<code class="descclassname">lab4.</code><code class="descname">natural</code><span class="sig-paren">(</span><em>string: str</em><span class="sig-paren">)</span><a class="headerlink" href="#lab4.natural" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Замена похожих символов с учётом регистра</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lab4.save">
+<code class="descclassname">lab4.</code><code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lab4.save" title="Ссылка на это определение">¶</a></dt>
+<dd><p>создание и сохранение отредактированного файла</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Renat Bikmukhamedov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/lab4.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
